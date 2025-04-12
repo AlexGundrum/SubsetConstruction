@@ -186,7 +186,7 @@ class TestingSuite(unittest.TestCase):
             expected_accepting_states
         )
 
-    def test_nfa_no_none_state(self):
+    def test_nfa_example(self):
         """
         Edge case: A random NFA
         """
