@@ -8,7 +8,8 @@ class DFA:
         self.initial_state = None
         self.accepting_states = set()
         self.alphabet = nfa.alphabet.copy()
-        self.construct_from_nfa()
+        if len(self.nfa.states) > 0:
+            self.construct_from_nfa()
     
     def construct_from_nfa(self):
         initial_epsilons = list(self.nfa.get_epsilon_closure(self.nfa.initial_state))
