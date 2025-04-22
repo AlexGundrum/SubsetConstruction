@@ -125,42 +125,42 @@ def plot_enhanced_complexity(results):
     plt.show()
 
 # Run the analysis on the improved NFAs
-improved_nfa_dir = "improved_nfas"
+improved_nfa_dir = "nfa_nth_from_last"  # Directory containing improved NFAs
 
 print("Analyzing improved NFAs...")
 improved_results = analyze_dfa_complexity(improved_nfa_dir)
 plot_enhanced_complexity(improved_results)
 
-# If you want to compare with the original NFAs:
-original_nfa_dir = "complex_nfas"  # Directory containing original NFAs
-if os.path.exists(original_nfa_dir):
-    print("\nAnalyzing original NFAs for comparison...")
-    # Just analyze a small sample of the original NFAs for comparison
-    sample_original_results = analyze_dfa_complexity(original_nfa_dir)
+# # If you want to compare with the original NFAs:
+# original_nfa_dir = "generated"  # Directory containing original NFAs
+# if os.path.exists(original_nfa_dir):
+#     print("\nAnalyzing original NFAs for comparison...")
+#     # Just analyze a small sample of the original NFAs for comparison
+#     sample_original_results = analyze_dfa_complexity(original_nfa_dir)
     
-    # Create comparison plot
-    plt.figure(figsize=(12, 6))
+#     # Create comparison plot
+#     plt.figure(figsize=(12, 6))
     
-    # Get data
-    orig_nfa_sizes = [r["nfa_states"] for r in sample_original_results]
-    orig_dfa_states = [r["dfa_states"] for r in sample_original_results]
-    improved_nfa_sizes = [r["nfa_states"] for r in improved_results]
-    improved_dfa_states = [r["dfa_states"] for r in improved_results]
+#     # Get data
+#     orig_nfa_sizes = [r["nfa_states"] for r in sample_original_results]
+#     orig_dfa_states = [r["dfa_states"] for r in sample_original_results]
+#     improved_nfa_sizes = [r["nfa_states"] for r in improved_results]
+#     improved_dfa_states = [r["dfa_states"] for r in improved_results]
     
-    # Plot comparison
-    plt.plot(orig_nfa_sizes, orig_dfa_states, marker='o', label='Original NFAs')
-    plt.plot(improved_nfa_sizes, improved_dfa_states, marker='x', label='Improved NFAs')
+#     # Plot comparison
+#     plt.plot(orig_nfa_sizes, orig_dfa_states, marker='o', label='Original NFAs')
+#     plt.plot(improved_nfa_sizes, improved_dfa_states, marker='x', label='Improved NFAs')
     
-    # Add theoretical maximum line for reference
-    x_range = range(1, max(max(orig_nfa_sizes), max(improved_nfa_sizes)) + 1)
-    theoretical = [2**x for x in x_range]
-    plt.plot(x_range, theoretical, linestyle='--', label='Theoretical Max (2^n)')
+#     # Add theoretical maximum line for reference
+#     x_range = range(1, max(max(orig_nfa_sizes), max(improved_nfa_sizes)) + 1)
+#     theoretical = [2**x for x in x_range]
+#     plt.plot(x_range, theoretical, linestyle='--', label='Theoretical Max (2^n)')
     
-    plt.yscale('log')
-    plt.xlabel("Number of NFA States")
-    plt.ylabel("Number of DFA States (log scale)")
-    plt.title("Comparison: Original vs Improved NFA-DFA Relationship")
-    plt.legend()
-    plt.grid(True)
-    plt.savefig("nfa_dfa_comparison.png")
-    plt.show()
+#     plt.yscale('log')
+#     plt.xlabel("Number of NFA States")
+#     plt.ylabel("Number of DFA States (log scale)")
+#     plt.title("Comparison: Original vs Improved NFA-DFA Relationship")
+#     plt.legend()
+#     plt.grid(True)
+#     plt.savefig("nfa_dfa_comparison.png")
+#     plt.show()
