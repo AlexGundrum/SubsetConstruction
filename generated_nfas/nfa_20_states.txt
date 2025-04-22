@@ -1,0 +1,44 @@
+states: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+alphabet: 0,1
+initial: 1
+accepting: 2,20,7,11,10,13
+transition: 1,1 -> 7,9
+transition: 1,0 -> 15,8
+transition: 2,1 -> 13,16
+transition: 2,0 -> 11,10
+transition: 3,0 -> 10,1
+transition: 3,epsilon -> 16,11
+transition: 4,1 -> 1,10
+transition: 4,epsilon -> 16,10
+transition: 5,epsilon -> 5,13
+transition: 5,1 -> 11,15
+transition: 6,epsilon -> 5
+transition: 6,0 -> 5,18
+transition: 7,0 -> 11,16
+transition: 7,1 -> 12,18
+transition: 8,1 -> 5,10
+transition: 8,epsilon -> 16,1
+transition: 9,1 -> 16
+transition: 9,0 -> 3,6
+transition: 10,epsilon -> 16
+transition: 10,epsilon -> 6
+transition: 11,0 -> 3,8
+transition: 11,epsilon -> 11
+transition: 12,0 -> 7
+transition: 12,epsilon -> 20
+transition: 13,1 -> 19,3
+transition: 13,1 -> 6,11
+transition: 14,0 -> 13,6
+transition: 14,epsilon -> 1
+transition: 15,0 -> 12,9
+transition: 15,0 -> 5
+transition: 16,epsilon -> 10
+transition: 16,1 -> 17
+transition: 17,1 -> 11
+transition: 17,epsilon -> 16,4
+transition: 18,0 -> 11
+transition: 18,1 -> 17
+transition: 19,1 -> 1,11
+transition: 19,epsilon -> 1
+transition: 20,1 -> 19,18
+transition: 20,0 -> 18,7
