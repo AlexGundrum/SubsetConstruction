@@ -45,6 +45,7 @@ def analyze_dfa_complexity(nfa_folder_path):
         elapsed_time = time.time() - start_time
 
         num_dfa_states = len(dfa.states)
+
         num_dfa_transitions = len(dfa.delta_transition)
 
         # Calculate theoretical maximum (2^n)
@@ -125,7 +126,7 @@ def plot_enhanced_complexity(results):
     plt.show()
 
 # Run the analysis on the improved NFAs
-improved_nfa_dir = "nfa_nth_from_last"  # Directory containing improved NFAs
+improved_nfa_dir = "max_nfa_output"  # Directory containing improved NFAs
 
 print("Analyzing improved NFAs...")
 improved_results = analyze_dfa_complexity(improved_nfa_dir)
