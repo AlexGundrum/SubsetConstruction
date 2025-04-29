@@ -1,0 +1,20 @@
+states: 1,2,3,4,5,6,7,8
+alphabet: 0,1
+initial: 1
+accepting: 5,3
+transition: 1,epsilon -> 3
+transition: 1,1 -> 8,5,3
+transition: 2,epsilon -> 4,3
+transition: 2,1 -> 4
+transition: 2,0 -> 8
+transition: 3,0 -> 6
+transition: 3,1 -> 7,6
+transition: 4,epsilon -> 1,4,6,7
+transition: 4,0 -> 8,1,2,4
+transition: 5,epsilon -> 1,5,6
+transition: 6,1 -> 5
+transition: 7,0 -> 4,1,6
+transition: 7,1 -> 4,5,6,7
+transition: 8,1 -> 1,2,3,6,7
+transition: 8,0 -> 5,8
+transition: 8,epsilon -> 2,3,5

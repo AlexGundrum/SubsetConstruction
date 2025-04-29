@@ -1,0 +1,11 @@
+states: 1,2,3,4
+alphabet: 0,1
+initial: 1
+accepting: 4
+transition: 1,epsilon -> 2
+transition: 2,1 -> 3,4
+transition: 3,epsilon -> 4
+transition: 1,1 -> 2,3
+transition: 3,0 -> 2,3
+transition: 4,0 -> 2
+transition: 4,epsilon -> 1
